@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+    <h1>Bem-vindo ao Sistema de Gerenciamento de Jogos</h1>
+    <ul>
+        <li><a href="{{ url_for('listar_usuarios') }}">Listar Usuários</a></li>
+        <li><a href="{{ url_for('listar_videogames') }}">Listar Videogames</a></li>
+        <li><a href="{{ url_for('listar_jogos') }}">Listar Jogos</a></li>
+        <li><a href="{{ url_for('listar_empresas') }}">Listar Empresas</a></li>
+    </ul>
+</body>
+</html>

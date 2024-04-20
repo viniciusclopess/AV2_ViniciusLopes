@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listar Usuários</title>
+</head>
+<body>
+    <h1>Listagem de Usuários</h1>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>País</th>
+            <th>ID do Console</th>
+            <th>Ações</th>
+        </tr>
+        {% for usuario in usuarios %}
+        <tr>
+            {% for value in usuario %}
+            <td>{{ value }}</td>
+            {% endfor %}
+            <td><a href="/deletar_usuario/{{ usuario[0] }}">Deletar</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+    <br>
+    <a href="/adicionar_usuario">Adicionar Usuário</a> <br>
+    <a href="/">Voltar</a>
+</body>
+</html>

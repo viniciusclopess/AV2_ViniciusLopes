@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adicionar Usuário</title>
+</head>
+<body>
+    <h1>Adicionar Usuário</h1>
+    <form action="/adicionar_usuario" method="post">
+        <label for="id">ID:</label><br>
+        <input type="text" id="id" name="id"><br>
+        <label for="name">Nome:</label><br>
+        <input type="text" id="name" name="name"><br>
+        <label for="country">País:</label><br>
+        <input type="text" id="country" name="country"><br>
+        <label for="id_console">ID do Console:</label><br>
+        <input type="text" id="id_console" name="id_console"><br><br>
+        <input type="submit" value="Submit">
+    </form>
+    <br>
+    <a href="/listar_usuarios">Voltar para a Lista de Usuários</a>
+</body>
+</html>

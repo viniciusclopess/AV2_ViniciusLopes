@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listar Jogos</title>
+</head>
+<body>
+    <h1>Listagem de Jogos</h1>
+    <table border="1">
+        <tr>
+            <th>ID do Jogo</th>
+            <th>Título</th>
+            <th>Gênero</th>
+            <th>Data de Lançamento</th>
+            <th>ID do Console</th>
+            <th>Ações</th>
+        </tr>
+        {% for jogo in game %}
+        <tr>
+            <td>{{ jogo[0] }}</td>
+            <td>{{ jogo[1] }}</td>
+            <td>{{ jogo[2] }}</td>
+            <td>{{ jogo[3] }}</td>
+            <td>{{ jogo[4] }}</td>
+            <td><a href="/deletar_jogo/{{ jogo[0] }}">Deletar</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+    <br>
+    <a href="/adicionar_jogo">Adicionar Jogo</a> <br>
+    <a href="/">Voltar</a>
+</body>
+</html>

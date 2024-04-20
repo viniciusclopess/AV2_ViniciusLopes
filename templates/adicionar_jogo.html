@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adicionar Jogo</title>
+</head>
+<body>
+    <h1>Adicionar Jogo</h1>
+    <form action="/adicionar_jogo" method="post">
+        <label for="id_game">ID Jogo:</label>
+        <input type="text" name="id_game" id="id_game"><br><br>
+        <label for="title">Título:</label>
+        <input type="text" name="title" id="title"><br><br>
+        <label for="genre">Gênero:</label>
+        <input type="text" name="genre" id="genre"><br><br>
+        <label for="release_date">Data de Lançamento:</label>
+        <input type="text" name="release_date" id="release_date"><br><br>
+        <label for="id_console">ID Console:</label>
+        <input type="text" name="id_console" id="id_console"><br><br>
+        <input type="submit" value="Adicionar">
+    </form>
+    <br>
+    <a href="/listar_jogos">Voltar para a Lista de Games</a>
+</body>
+</html>

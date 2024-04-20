@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listar Empresas</title>
+</head>
+<body>
+    <h1>Empresas Cadastradas</h1>
+    <table border="1">
+        <tr>
+            <th>ID Empresa</th>
+            <th>Nome</th>
+            <th>País</th>
+        </tr>
+        {% for empresa in empresas %}
+        <tr>
+            <td>{{ empresa[0] }}</td>
+            <td>{{ empresa[1] }}</td>
+            <td>{{ empresa[2] }}</td>
+            <td>{{ empresa[3] }}</td>
+            <td>{{ empresa[4] }}</td>
+            <td><a href="/deletar_empresa/{{ empresa[0] }}">Deletar</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+    <br>
+    <a href="/adicionar_empresa">Adicionar Empresa</a><br>
+    <a href="/">Voltar</a>
+</body>
+</html>

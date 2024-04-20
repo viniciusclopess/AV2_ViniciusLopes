@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adicionar Empresa</title>
+</head>
+<body>
+    <h1>Adicionar Empresa</h1>
+    <form action="/adicionar_empresa" method="post">
+        <label for="id_company">ID Empresa:</label>
+        <input type="text" name="id_company" id="id_company"><br><br>
+        <label for="name">Nome:</label>
+        <input type="text" name="name" id="name"><br><br>
+        <label for="country">País:</label>
+        <input type="text" name="country" id="country"><br><br>
+        <input type="submit" value="Adicionar">
+    </form>
+    <br>
+    <a href="/listar_empresas">Voltar para a Lista de Empresas</a>
+</body>
+</html>

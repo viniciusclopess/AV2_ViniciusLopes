@@ -1,21 +1,25 @@
 from flask import Flask, render_template, request, redirect, url_for
 import mysql.connector
 
+
+#QUESTÃO 3 ESCOLHIDA
+
+
 # Estabelecer conexão com o MySQL
 mydb = mysql.connector.connect(
     host="localhost",
     user="root",
     password="root",
-    database="AV2_ViniciusLopes4"  # Nome do banco de dados que criamos anteriormente
+    database="AV2_ViniciusLopes"
 )
 
-# Inicializar a aplicação Flask
+#Inicializar a aplicação Flask
 app = Flask(__name__)
 
-# Cursor que permite executar comandos SQL no banco de dados.
+#Cursor que permite executar comandos SQL no banco de dados.
 cursor = mydb.cursor()
 
-# Função para executar comandos SQL
+#Função para executar comandos SQL
 def exec_sql_cmd(cmd):
     cursor.execute(cmd)
     mydb.commit()
@@ -23,7 +27,6 @@ def exec_sql_cmd(cmd):
 @app.route('/')
 def index():
     return render_template('index.html')
-
 
 # Rota para listar usuários
 @app.route('/listar_usuarios', methods=['GET', 'POST'])
@@ -33,7 +36,6 @@ def listar_usuarios():
     return render_template('listar_usuarios.html', usuarios=usuarios)
 
 # Rota para adicionar usuário
-
 @app.route('/adicionar_usuario', methods=['GET', 'POST'])
 def adicionar_usuario():
     if request.method == 'POST':
@@ -50,11 +52,13 @@ def adicionar_usuario():
 def deletar_usuario(id):
     exec_sql_cmd(f"DELETE FROM USERS WHERE id={id}")
     return redirect(url_for('listar_usuarios'))
+
 @app.route('/listar_videogames', methods=['GET', 'POST'])
 def listar_videogames():
     cursor.execute("SELECT * FROM VIDEOGAMES")
     videogames = cursor.fetchall()  # Renomeie a variável para videogames
-    return render_template('listar_videogames.html', games=videogames)  # Altere o nome da variável para games
+    return render_template('listar_videogames.html', games=videogames)
+
 @app.route('/adicionar_videogame', methods=['GET', 'POST'])
 def adicionar_videogame():
     if request.method == 'POST':
@@ -65,6 +69,7 @@ def adicionar_videogame():
         exec_sql_cmd(f"INSERT INTO VIDEOGAMES (id_console, name, id_company, release_date) VALUES ({id_console}, '{name}', {id_company}, '{release_date} 00:00:00') ")
         return redirect(url_for('listar_videogames'))
     return render_template('adicionar_videogame.html')
+
 @app.route('/deletar_videogame/<int:id_console>')
 def deletar_videogame(id_console):
     exec_sql_cmd(f"DELETE FROM VIDEOGAMES WHERE id_console={id_console}")
@@ -87,6 +92,7 @@ def adicionar_jogo():
         exec_sql_cmd(f"INSERT INTO GAMES (id_game, title, genre, release_date, id_console) VALUES ({id_game}, '{title}', '{genre}', '{release_date} 00:00:00', {id_console} )")
         return redirect(url_for('listar_jogos'))
     return render_template('adicionar_jogo.html')
+
 @app.route('/deletar_jogo/<int:id_game>')
 def deletar_jogo(id_game):
     exec_sql_cmd(f"DELETE FROM GAMES WHERE id_game={id_game}")

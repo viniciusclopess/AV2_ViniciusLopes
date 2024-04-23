@@ -1,3 +1,5 @@
+#Mesmo algoritmo de q1_ViniciusLopes.py
+
 #Criar um usuário
 users = lambda id, name, password: {'id': id, 'name': name, 'password': password}
 
@@ -33,7 +35,8 @@ cancel_transaction = lambda transaction: (print('The operation was canceled.') a
 #Completar transação
 complete_transaction = lambda transaction: (print('The operation failed, finishing... ') and transaction.clear()) if not transaction or transaction['value'] < 0 else (print('The operation was successful.') and transaction)
 
-#teste 1
+#Objetivo da questão 2
+#Teste 1
 user = users('1', 'Vinicius Lopes', '123')
 transaction = create_transaction(user, 100)
 receive_cash()
@@ -42,7 +45,7 @@ print_and_return_payment_receipt(transaction)
 confirm_payment_from_bank(transaction)
 complete_transaction(transaction)
 
-#teste 2
+#Teste 2
 user = users('2', 'Sophia Brito', '456')
 user2 = users('3', 'Unifor', '789')
 transaction = create_transaction(user, 200)
@@ -52,7 +55,7 @@ print_and_return_bank_deposit_details(transaction)
 confirm_payment_from_bank(transaction)
 complete_transaction(transaction)
 
-#teste 3
+#Teste 3
 user = users('3', 'Maria Silva', '789')
 transaction = create_transaction(user, 300)
 receive_credit(user, transaction)
@@ -63,25 +66,19 @@ complete_transaction(transaction)
 
 #Teste de Stress
 import random, time
-
-# Função de teste de estresse
+#Função de teste de stress
 stress_test = lambda num_transactions: [
     cash(create_transaction(users(1, 'John', 'password'), random.randint(1, 100)))
-
     for _ in range(num_transactions)
 ]
-# Registrar o tempo inicial
+#Registrar o tempo inicial
 start_time = time.time()
-
-# Executar o teste de estresse com 100000 transações
+#Executar o teste de estresse com 100000 transações
 transactions = stress_test(100000)
-
-# Registrar o tempo final
+#Registrar o tempo final
 end_time = time.time()
-
-# Calcular o tempo total do teste
+#Calcular o tempo total do teste
 elapsed_time = end_time - start_time
-
-# Exibir o tempo total do teste
+#Exibir o tempo total do teste
 print(f"Teste de estresse concluído em {elapsed_time:.2f} segundos.")
 

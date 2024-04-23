@@ -25,7 +25,6 @@ receive_credit = lambda user, transaction: print(f"\n*","-"*45,"*",f"\nThe credi
 #Request payment from bank
 request_payment_from_bank = lambda transaction: (print(f"* {'-' * 45} *\nPayment request sent to the bank.") or transaction) if transaction and transaction['value'] > 0 else None
 
-
 #Confirmar pagamento pelo banco
 confirm_payment_from_bank = lambda transaction: (print(f"||{'|' * 45}||\nThe payment has been confirmed by the bank.") or transaction) if transaction and transaction['value'] > 0 else None
 #Cancelar transação

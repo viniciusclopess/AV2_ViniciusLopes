@@ -37,7 +37,9 @@ deletar_dados = lambda table, condition, cursor: exec_sql_cmd(f"DELETE FROM {tab
 #Fazer uma consulta na tabela selecionada
 selecionar_condicao = lambda attrs, table, wherecond, cursor: exec_sql_cmd(f"SELECT {attrs} FROM {table} WHERE {wherecond};", cursor)
 
+
 #OBJETIVO DA QUESTÃO 4
+
 gerar_inner_join = lambda: exec_sql_cmd("SELECT * FROM GAMES INNER JOIN VIDEOGAMES ON GAMES.id_game = VIDEOGAMES.id_console INNER JOIN COMPANY ON VIDEOGAMES.id_company = COMPANY.id_company", cursor)
 
 #Função lambda para gerar o comando SELECT nos atributos envolvidos

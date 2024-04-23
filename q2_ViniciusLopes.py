@@ -35,7 +35,7 @@ cancel_transaction = lambda transaction: (print('The operation was canceled.') a
 #Completar transação
 complete_transaction = lambda transaction: (print('The operation failed, finishing... ') and transaction.clear()) if not transaction or transaction['value'] < 0 else (print('The operation was successful.') and transaction)
 
-#Objetivo da questão 2
+#OBJETIVO DA QUESTÃO 2
 #Teste 1
 user = users('1', 'Vinicius Lopes', '123')
 transaction = create_transaction(user, 100)

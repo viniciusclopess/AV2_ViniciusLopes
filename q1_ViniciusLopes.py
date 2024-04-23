@@ -1,3 +1,4 @@
+#OBJETIVO DA QUESTÃO 1
 #Criar um usuário
 users = lambda id, name, password: {'id': id, 'name': name, 'password': password}
 

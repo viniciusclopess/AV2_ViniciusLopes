@@ -37,7 +37,7 @@ deletar_dados = lambda table, condition, cursor: exec_sql_cmd(f"DELETE FROM {tab
 #Fazer uma consulta na tabela selecionada
 selecionar_condicao = lambda attrs, table, wherecond, cursor: exec_sql_cmd(f"SELECT {attrs} FROM {table} WHERE {wherecond};", cursor)
 
-#Objetivo da questão 3
+#OBJETIVO DA QUESTÃO 3
 criar_database('AV2_ViniciusLopes', cursor)
 usar_database("AV2_ViniciusLopes", cursor)
 criar_tabela("USERS", 'id INT, name VARCHAR(255), country VARCHAR(255), id_console INT', cursor)

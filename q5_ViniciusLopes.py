@@ -2,8 +2,7 @@ from flask import Flask, render_template, request, redirect, url_for
 import mysql.connector
 
 
-#QUESTÃO 3 ESCOLHIDA
-
+# A QUESTÃO 3 FOI ESCOLHIDA
 
 # Estabelecer conexão com o MySQL
 mydb = mysql.connector.connect(
